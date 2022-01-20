@@ -1,0 +1,56 @@
+import Fastify, { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify';
+
+import { Router } from 'Misc/Http/Router';
+
+import { IMiddleware } from 'Misc/Http/Middleware/IMiddleware';
+
+import { Exception } from 'Exceptions/Exception';
+
+export class HttpServer {
+  protected instance!: FastifyInstance;
+
+  constructor() {
+    /**
+     * Create instance of fastify
+     */
+
+    this.instance = Fastify();
+
+    /**
+     * Change default error handler
+     */
+
+    this.instance.setErrorHandler((
+      error: Error,
+      _request: FastifyRequest,
+      response: FastifyReply,
+    ) => {
+      response.status(error instanceof Exception ? error.status : 500).send({
+        message: error.message,
+      });
+    });
+  }
+
+  public registerMiddleware = (...middlewares: IMiddleware[]) => {
+    for (const { handle } of middlewares) {
+      this.instance.addHook(
+        'onRequest',
+        handle,
+      );
+    }
+  };
+
+  public listen = async (port: number, callback?: () => void) => {
+    /**
+     * Prepare router
+     */
+
+    Router.prepare(this.instance).then(() => {
+      /**
+       * Start server and serve on port @port
+       */
+
+      this.instance.listen(port, () => (callback ? callback() : {}));
+    });
+  };
+}

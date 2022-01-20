@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    /**
+      * Java Script settings
+      */
+
+    "target": "ESNext",
+    "module": "CommonJS",
+
+    /**
+      * Folder settings
+      */
+
+    "baseUrl": "./src",
+    "paths": {
+      "Exceptions/*": [ "exceptions/*" ],
+      "Contracts/*": [ "contracts/*" ],
+      "Misc/*": [ "misc/*" ],
+      "Storage/*": [ "storage/*" ],
+      "Version/*": [ "version/*" ],
+      "User/*": [ "user/*" ]
+    },
+
+    /**
+      * Project settings
+      */
+
+    "strict": true,
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "forceConsistentCasingInFileNames": true,
+  }
+}
