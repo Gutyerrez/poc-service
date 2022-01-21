@@ -1,6 +1,8 @@
-import { IDatabaseProvider } from 'Misc/Provider/Database/IDatabaseProvider';
+import { Connection } from 'pg';
 
 import knex, { Knex } from 'knex';
+
+import { IDatabaseProvider } from 'Misc/Provider/Database/IDatabaseProvider';
 
 export class PostgreSQLDatabaseProvider implements IDatabaseProvider<Knex> {
   protected provider!: Knex;
@@ -41,10 +43,12 @@ export class PostgreSQLDatabaseProvider implements IDatabaseProvider<Knex> {
       pool: {
         min: 0,
         max: 10,
+        afterCreate: async (
+          connection: Connection,
+          _done: (error: Error, connection: Connection) => void,
+        ) => connection.query(`SET search_path=${this.schema}`),
       },
     });
-
-    // TODO setup schema
   };
 
   provide = () => this.provider;
