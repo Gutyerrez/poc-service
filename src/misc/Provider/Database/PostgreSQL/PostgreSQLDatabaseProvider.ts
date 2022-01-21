@@ -1,9 +1,9 @@
 import { IDatabaseProvider } from 'Misc/Provider/Database/IDatabaseProvider';
 
-import { Pool, PoolClient } from 'pg';
+import knex, { Knex } from 'knex';
 
-export class PostgreSQLDatabaseProvider implements IDatabaseProvider<PoolClient> {
-  protected provider!: PoolClient;
+export class PostgreSQLDatabaseProvider implements IDatabaseProvider<Knex> {
+  protected provider!: Knex;
 
   private hostname: string;
   private port: number;
@@ -29,15 +29,22 @@ export class PostgreSQLDatabaseProvider implements IDatabaseProvider<PoolClient>
   }
 
   prepare = async () => {
-    this.provider = await new Pool({
-      host: this.hostname,
-      port: this.port,
-      user: this.username,
-      password: this.password,
-      database: this.database,
-    }).connect();
+    this.provider = knex({
+      client: 'pg',
+      connection: {
+        host: this.hostname,
+        port: this.port,
+        user: this.username,
+        password: this.password,
+        database: this.database,
+      },
+      pool: {
+        min: 0,
+        max: 10,
+      },
+    });
 
-    this.provider.query(`SET search_path TO ${this.schema}`);
+    // TODO setup schema
   };
 
   provide = () => this.provider;

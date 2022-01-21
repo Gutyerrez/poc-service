@@ -13,12 +13,11 @@
 
     "baseUrl": "./src",
     "paths": {
+      "Cache/*": [ "cache/*" ],
       "Exceptions/*": [ "exceptions/*" ],
       "Contracts/*": [ "contracts/*" ],
       "Misc/*": [ "misc/*" ],
-      "Storage/*": [ "storage/*" ],
-      "Version/*": [ "version/*" ],
-      "User/*": [ "user/*" ]
+      "Storage/*": [ "storage/*" ]
     },
 
     /**
