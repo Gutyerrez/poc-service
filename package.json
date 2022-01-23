@@ -1,8 +1,8 @@
 {
-  "name": "zeraph-main",
+  "name": "zeraph-main-test",
   "version": "0.0.1",
   "author": "Vinícius Gutierrez <srgutyerrez@gmail.com>",
-  "private": false,
+  "type": "module",
   "dependencies": {
     "fastify": "^3.25.3",
     "jsonwebtoken": "^8.5.1",
