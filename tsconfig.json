@@ -8,13 +8,18 @@
     "module": "ESNext",
     "moduleResolution": "Node",
 
+    /**
+      * Type Script settings
+      */
+
     "declaration": true,
+    "emitDeclarationOnly": true,
+    "isolatedModules": true,
 
     /**
       * Folder settings
       */
 
-    "outDir": "build",
     "baseUrl": "./src",
 
     /**
