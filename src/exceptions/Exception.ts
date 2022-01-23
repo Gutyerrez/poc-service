@@ -8,8 +8,5 @@ export class Exception extends Error {
     super(message);
 
     this.status = status;
-
-    delete this.cause;
-    delete this.stack;
   }
 }

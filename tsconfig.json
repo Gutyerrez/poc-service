@@ -11,6 +11,7 @@
       * Folder settings
       */
 
+    "outDir": "build",
     "baseUrl": "./src",
     "paths": {
       "Cache/*": [ "cache/*" ],

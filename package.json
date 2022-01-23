@@ -1,11 +1,8 @@
 {
   "name": "zeraph-main",
-  "version": "0.1-ALPHA",
+  "version": "0.0.1",
   "author": "Vinícius Gutierrez <srgutyerrez@gmail.com>",
-  "private": true,
-  "scripts": {
-    "start": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify ./src/Application.ts"
-  },
+  "private": false,
   "dependencies": {
     "fastify": "^3.25.3",
     "jsonwebtoken": "^8.5.1",
