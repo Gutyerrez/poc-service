@@ -1,5 +1,5 @@
 {
-  "name": "zeraph-main-test",
+  "name": "@vyrnn/zeraph-main",
   "version": "0.0.1",
   "author": "Vinícius Gutierrez <srgutyerrez@gmail.com>",
   "type": "module",

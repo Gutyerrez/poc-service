@@ -5,7 +5,10 @@
       */
 
     "target": "ESNext",
-    "module": "CommonJS",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+
+    "declaration": true,
 
     /**
       * Folder settings
@@ -13,6 +16,11 @@
 
     "outDir": "build",
     "baseUrl": "./src",
+
+    /**
+      * Paths settings
+      */
+
     "paths": {
       "Cache/*": [ "cache/*" ],
       "Exceptions/*": [ "exceptions/*" ],
@@ -33,5 +41,7 @@
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
     "forceConsistentCasingInFileNames": true,
-  }
+  },
+  "include": [ "src" ],
+  "exclude": [ "node_modules" ]
 }
