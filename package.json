@@ -2,11 +2,6 @@
   "name": "@vyrnn/zeraph-main",
   "version": "0.0.1",
   "author": "Vinícius Gutierrez <srgutyerrez@gmail.com>",
-  "scripts": {
-    "build:sources": "babel src --extensions \".js,.ts\" --out-dir lib --copy-files --no-copy-ignored",
-    "build:types": "tsc",
-    "prepare": "build:types && build:sources"
-  },
   "dependencies": {
     "fastify": "^3.25.3",
     "jsonwebtoken": "^8.5.1",
@@ -21,6 +16,7 @@
     "@babel/preset-typescript": "^7.14.5",
     "@types/jsonwebtoken": "^8.5.7",
     "@types/node": "^17.0.8",
+    "@types/pg": "^8.6.4",
     "@typescript-eslint/eslint-plugin": "^5.9.1",
     "@typescript-eslint/parser": "^5.9.1",
     "babel-plugin-module-resolver": "^4.1.0",
