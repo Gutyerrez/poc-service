@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "author": "Vinícius Gutierrez <srgutyerrez@gmail.com>",
   "scripts": {
-    "build": "babel src --extensions \".js,.ts\" --out-dir lib --copy-files --no-copy-ignored"
+    "build:sources": "babel src --extensions \".js,.ts\" --out-dir lib --copy-files --no-copy-ignored",
+    "build:types": "tsc",
+    "prepare": "build:types && build:sources"
   },
   "dependencies": {
     "fastify": "^3.25.3",
