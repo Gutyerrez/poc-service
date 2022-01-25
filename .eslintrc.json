@@ -30,7 +30,8 @@
     "no-underscore-dangle": "off",
     "no-use-before-define": "off",
     "array-bracket-spacing": [
-      1, "always"
+      1,
+      "always"
     ],
     "no-restricted-syntax": "off",
     "max-classes-per-file": "off",
