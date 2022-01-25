@@ -4,8 +4,9 @@
   "author": "Vinícius Gutierrez <srgutyerrez@gmail.com>",
   "scripts": {
     "prebuild": "tsc",
-    "build": "echo 'E aí!'"
+    "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files"
   },
+  "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
@@ -17,11 +18,20 @@
     "pg": "^8.7.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/node": "^7.10.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-decorators": "^7.10.5",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-typescript": "^7.10.4",
     "@types/jsonwebtoken": "^8.5.7",
     "@types/node": "^17.0.8",
     "@types/pg": "^8.6.4",
     "@typescript-eslint/eslint-plugin": "^5.9.1",
     "@typescript-eslint/parser": "^5.9.1",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-transform-typescript-metadata": "^0.3.2",
     "eslint": "^8.6.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-import-resolver-typescript": "^2.5.0",

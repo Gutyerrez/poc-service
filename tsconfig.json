@@ -5,8 +5,8 @@
       */
 
     "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Node",
+
+    "module": "CommonJS",
 
     /**
       * Type Script settings
