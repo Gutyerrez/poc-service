@@ -1,5 +1,5 @@
 {
-  "name": "@vyrnn/zeraph-main",
+  "name": "poc-service",
   "version": "0.0.1",
   "author": "Vinícius Gutierrez <srgutyerrez@gmail.com>",
   "dependencies": {
