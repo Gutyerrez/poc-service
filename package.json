@@ -2,6 +2,14 @@
   "name": "poc-service",
   "version": "0.0.1",
   "author": "Vinícius Gutierrez <srgutyerrez@gmail.com>",
+  "scripts": {
+    "prebuild": "tsc",
+    "build": "echo 'E aí!'"
+  },
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "fastify": "^3.25.3",
     "jsonwebtoken": "^8.5.1",
